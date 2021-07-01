@@ -1,0 +1,516 @@
+/*--------------- fonts ---------------*/
+@font-face {
+    font-family: 'Avenir Next Cyr';
+    src: url('../fonts/AvenirNextCyr-Medium.woff') format('woff2'),
+         url('../fonts/AvenirNextCyr-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir Next Cyr';
+    src: url('../fonts/AvenirNextCyr-Regular.woff') format('woff2'),
+         url('../fonts/AvenirNextCyr-Regular.woff2') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir Next Cyr';
+    src: url('../fonts/AvenirNextCyr-Bold.woff') format('woff2'),
+         url('../fonts/AvenirNextCyr-Bold.woff2') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir Next Cyr';
+    src: url('../fonts/AvenirNextCyr-Demi.woff') format('woff2'),
+         url('../fonts/AvenirNextCyr-Demi.woff2') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../fonts/FuturaPT-Book.woff') format('woff2'),
+         url('../fonts/FuturaPT-Book.woff2') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../fonts/FuturaPT-Demi.woff') format('woff2'),
+         url('../fonts/FuturaPT-Demi.woff2') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+/*--------------- Variables ---------------*/
+
+:root{
+    /* fonts */
+    --AvenirNext: 'Avenir Next Cyr';
+    --FuturaPT: 'FuturaPT';
+    /* colors */
+    --white: #ffff;
+    --textDark: #303952;
+    --blue:#001DC5;
+    --purple:#654CD3;
+    --gradient:linear-gradient(75.99deg, #7D4DCF -0.1%, #2F49D9 45.15%, #212071 104.58%);
+}
+
+/*--------------- General ---------------*/
+
+html, body{
+    font-family: var(--AvenirNext);
+    font-size: 18px;
+    font-weight:600;
+}
+.container {
+    width: 100%;
+    max-width: 1190px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+/*--------------- header ---------------*/
+.header {
+   background-color: var(--white);
+   width: 100%;
+   padding: 20px 0;
+}
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__nav {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo__icon {
+    width: 111px;
+    height: 50px;
+    display:block;
+}
+.nav {
+    width: 340px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 60px; 
+}
+.nav__item {
+    font-size: 16px;
+    font-weight: 500;
+    color:var(--textDark);
+    line-height: 16px;
+}
+.header-button{
+    border-radius: 32px;
+    padding: 2px 2px;
+    background: linear-gradient(75.99deg, #7D4DCF -0.1%, #2F49D9 45.15%, #212071 104.58%);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.header-button__text {
+    font-size: 16px;
+    color: var(--blue); 
+    padding: 11px 20px;
+    border-radius: 32px;
+    background-color:var(--white);
+}
+/* nav-toggle */
+.nav-toggle {
+    display:none;
+    margin: 3px;
+}
+.nav-toggle span{
+    content: '';
+    width:18px;
+    height: 2px;
+    background: var(--blue);
+    display:block;
+    margin: 3px 0;
+}
+.nav-toggle--active span:nth-child(2){
+    display: none;
+}
+.nav-toggle--active span:first-child{
+    transform: translateY(2px) rotate(45deg)
+}
+.nav-toggle--active span:last-child{
+    transform: translateY(-3px) rotate(-45deg)
+}
+/* header-hovers */
+.header-button:hover{
+    cursor: pointer;
+}
+.header-button:hover .header-button__text{
+    color: var(--white);
+    background: transparent;
+    transition: all .1s linear;
+}
+.nav__item:hover{
+    color: var(--purple);
+    cursor: pointer;
+    transition: all .1s linear;
+}
+/*--------------- banner ---------------*/
+
+.banner {
+    width: 100%;
+    height: calc(100vh - 90px);
+    background: url('../img/banners/BG-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.banner::after{
+    content: "";
+    width: 100%;
+    height: calc(100vh - 90px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(9, 45, 87, .35);
+}
+.banner__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 90px);
+}
+.banner__tittle {
+    font-family: var(--FuturaPT);
+    font-weight: 700;
+    font-size: 64px;
+    color:var(--white);
+    z-index: 1;
+}
+.bunner__discription {
+    font-family: var(--AvenirNext);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 180%;
+    color:var(--white);
+    max-width: 800px;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+/*--------------- about ---------------*/
+
+.about {
+    padding: 50px 0;
+}
+.article {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+.article__left {
+    width: 49%;
+    display: flex;
+    align-items: flex-start;
+}
+.article__icon {
+    width: 52px;
+    height: 52px;
+    margin-top: 10px;
+}
+.article__tittle {
+    font-size: 32px;
+    font-weight: 700;
+    margin-left: 20px;
+    background: linear-gradient(75.99deg, #7D4DCF -0.1%, #2F49D9 45.15%, #212071 104.58%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px 0;
+    line-height: 150%;
+}
+.article__right {
+    width: 49%;
+}
+.article__subscribe {
+    margin-top: 25px;
+    line-height: 27px;
+    font-weight: 600;
+    color: var(--textDark);
+}
+
+/*--------------- profitability ---------------*/
+
+.profitability {
+    width: 100%;
+    background: url('../img/profability-bg.jpg');
+    background-size: cover;
+    background-position:center;
+    background-repeat:no-repeat; 
+    padding: 67px 0 160px 0;
+}
+.profitability__inner {
+
+}
+.profitability__head {
+   
+}
+.profitability__tittle {
+    width: 100%;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 150%;
+    text-align: center;
+    color:var(--white);
+}
+.profitability__row {
+    margin-top: 15px;
+    width: 540px;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profitability__text {
+    font-size: 24px;
+    line-height: 150%;
+    color:var(--white);
+}
+.profitability__input--wrapper{
+    position: relative;
+}
+.profitability__input--wrapper::after{
+    content: '$';
+    position: absolute;
+    left: 17px;
+    top: 13px;
+    text-transform: uppercase;
+}
+.profitability__input {
+    width: 165px;
+    height: 44px;
+    border: 1px solid #287DE0;
+    box-shadow: inset 0px 1px 4px rgba(48, 57, 82, 0.15);
+    border-radius: 46px;
+    padding-left: 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color:#000;
+    font-weight: 600;
+}
+/* slider */
+.slick-list{
+    overflow: hidden;
+}
+.slick-track{
+    display:flex;
+}
+.slick-slide{
+    margin: 0 15px;
+    width: 100%;
+}
+.profitability-slider {
+    margin-top: 42px;
+}
+.profitability-slider .slick-dots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+.profitability-slider .slick-dots li{
+    margin: 0 10px;
+    border-radius: 100%;
+    background:white;  
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    padding: 1px;
+}
+.profitability-slider .slick-dots button{
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border-radius:100%;
+}
+/* active-dot */
+.profitability-slider .slick-dots li.slick-active button{
+    background:var(--gradient);
+    border-radius: 100%;
+}
+.calc-card {
+    background-color:var(--white);
+    border-radius: 16px;
+    padding: 32px 23px 13px 23px;
+}
+.calc-card__tittle {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 102.7%;
+    background: linear-gradient(75.99deg, #7D4DCF -0.1%, #2F49D9 45.15%, #212071 104.58%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.calc-card__box {
+    margin-top: 20px;
+}
+.profit {
+    display:flex;
+    justify-content:space-between;
+    align-items: flex-end;
+}
+.profit__text,
+.your-profit__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color:var(--textDark);
+}
+.profit__percent {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 150%;
+    color:var(--textDark);
+}
+.your-profit {
+    margin-top: 20px;
+
+}
+.your-profit__value {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 180%;
+    text-align: right;
+    color:var(--textDark);
+}
+
+/*--------------- active-clases ---------------*/
+
+.nav__item--active{
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--purple);
+}
+
+
+/*--------------- @media ---------------*/
+
+@media (max-width: 768px) {
+    .header__nav{
+        display:none;
+    }
+    .nav-toggle{
+        display:block;
+    }
+    .logo__icon{
+        width: 77px;
+        height: 35px;
+    }
+    .header{
+        padding: 20px 0 15px 0;
+    }
+    .banner,
+    .banner::after,
+    .banner__inner{
+        height: calc(100vh - 70px);
+    }
+    .banner__tittle {
+        font-size: 45px;
+    }
+    .bunner__discription{
+        font-size: 20px;
+        max-width: 550px;
+    }
+    /* nav-toggle */
+    .header__nav{
+      display: flex; 
+      flex-direction: column;
+      align-items:flex-start;
+      position: absolute; 
+      top: 80px;
+      right: 10px;
+      z-index: 2;
+      width: 250px;
+      background-color:var(--white);
+      padding: 20px 20px;
+      border-radius:20px;
+      height: 230px;
+    }
+    .nav{
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        text-align: left;
+        padding-left: 20px;   
+    }
+    .nav__item{
+        display: list-item;
+        list-style-type: disc;
+        margin-bottom: 20px;
+    }
+    .header__button{
+        align-self: flex-end;
+    }  
+    /* about */
+    .about{
+        padding: 20px 0;
+    }
+    .article{
+        display: block;
+        padding: 30px 0;
+    }
+    .article__right,
+    .article__left{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 579px) {
+    .banner__tittle {
+        font-size: 36px;
+    }
+    .bunner__discription{
+        font-size: 18px;
+    }
+    .profitability{
+        padding: 60px 0 30px 0;
+    }
+    .profitability__row{
+        width: 100%;
+        flex-direction:column;
+        margin-top: 25px;
+    }
+    .profitability__input{
+        margin: 15px 0;
+    }
+    .profitability__tittle{
+        font-size: 24px;
+    }
+    .container--slider{
+        padding: 0;
+    }
+    .profitability__input--wrapper::after{
+        top:28px;
+    }
+}
+
+@media (max-width: 440px) {
+    /* nav-toggle */
+    .header__nav{
+        width: 100%;
+        top: 69px;
+        left: 0;
+        border-radius: 0;
+        height: calc(100vh - 69px);
+    }
+    .nav{
+        margin-top: 72px;
+    }
+    .article__subscribe{
+        font-size: 14px;
+        line-height: 150%;
+    }
+    .article__tittle{
+        font-size: 24px;
+    }
+}
