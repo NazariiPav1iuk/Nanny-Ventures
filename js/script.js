@@ -35,7 +35,7 @@ $(document).ready(function(){
           }
         ]
       });
-
+      // working-slider
       $('.working-slider').slick({
         slidesToShow: 3,
         responsive: [
@@ -63,6 +63,22 @@ $(document).ready(function(){
               centerPadding: '30px',
               slidesToShow: 1,
               dots:true
+            }
+          }
+        ]
+      });
+    // brifcase slider 
+      $('.briefcase__content').slick({
+        slidesToShow: 3,
+        responsive: [
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: false,
+              centerPadding: '30px',
+              slidesToShow: 1,
+              dots:false
             }
           }
         ]

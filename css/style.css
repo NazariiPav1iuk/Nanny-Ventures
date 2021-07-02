@@ -385,7 +385,6 @@ html, body{
     background:linear-gradient(180deg, #FFFFFF 0%, #F1F8FE 19.65%, #F1F8FE 54.28%, #F1F8FE 99.25%, rgba(255, 255, 255, 0) 99.26%);
 }
 .working {
-   
     padding: 100px 0 50px 0;
 }
 .working__tittle {
@@ -459,9 +458,123 @@ html, body{
 }
 
 /*--------------- safe ---------------*/
-
+.insurance,
 .safe{
-    padding: 20px 0 100px;
+    padding: 20px 0 50px;
+}
+
+/*--------------- funds ---------------*/
+
+.funds {
+    background:url('../img/funds-bg.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    padding: 155px 0 62px  0;
+}
+.funds__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.funds__count,
+.funds__tittle {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 150%;
+    color:var(--white);
+}
+.funds__count {
+    font-weight: 700;
+    margin-left: 32px;
+}
+.funds__tetx {
+    width: 100%;
+    margin-top: 79px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 180%;
+    color:var(--white);
+}
+.line-bar {
+    width: 100%;
+    margin-top: 21px;
+}
+.line-bar__top {
+    display: flex;
+}
+.line-bar__year {
+    width: 16.66%;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color:var(--white);
+    text-align: right;
+}
+.line-bar__line {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    margin-top: 5px;
+}
+.line-bar__middle {
+    display:flex;
+    justify-content: space-between;
+}
+.line-bar__empty{
+    width: 16.66%;
+}
+.line-bar__dot {
+    width: 16.66%;
+    display:flex;
+    justify-content: flex-end; 
+    margin-top: -9px;
+}
+.line-bar__dot span{
+    display:block;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(75.99deg, #7D4DCF -0.1%, #2F49D9 45.15%, #212071 104.58%);
+    border: 3px solid #FFFFFF;
+    border-radius: 100%;
+    font-size: 0;
+}
+.line-bar__bottom {
+    display:flex;
+}
+.line-bar__percent {
+    width: 16.66%;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    color:var(--white);
+    letter-spacing: 1px;
+}
+
+/*--------------- briefcase ---------------*/
+
+.briefcase {
+    background-color:var(--white);
+    padding: 90px 0 70px 0;
+}
+.briefcase__head {
+    display:flex;
+    align-items: center;
+}
+.briefvase__tittle {
+    margin-left: 20px;
+}
+.briefcase__content {
+    margin-top: 44px;
+}
+.briefcase__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+}
+.briefcase__item {
+    width: 165px;
+    height: auto;
 }
 
 /*--------------- active-clases ---------------*/
@@ -473,7 +586,16 @@ html, body{
 }
 
 /*--------------- @media ---------------*/
-
+@media (max-width: 1024px) {
+    /* briefcase */
+    /* .briefcase__row {
+       display: flex;
+       flex-direction: column;
+    } */
+    .briefcase__item{
+        width: 125px;
+    }
+}
 @media (max-width: 768px) {
     .header__nav{
         display:none;
@@ -556,6 +678,19 @@ html, body{
     }
     .slider-element__tittle{
         font-size: 20px;
+    }
+     /* briefcase */
+    .briefcase__row {
+       display: flex;
+       flex-direction: column;
+    }
+    .briefcase__content{
+        display: flex;
+        justify-content: space-around;
+    }
+    .briefcase__item{
+        padding: 10px 0;
+        
     }
 }
 
@@ -640,5 +775,11 @@ html, body{
     }
     .slider-element__tittle{
         font-size: 24px;
+    }
+    /* briefcase */
+    .briefcase__row{
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
