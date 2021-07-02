@@ -67,20 +67,4 @@ $(document).ready(function(){
           }
         ]
       });
-    // brifcase slider 
-      $('.briefcase__content').slick({
-        slidesToShow: 3,
-        responsive: [
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: false,
-              centerPadding: '30px',
-              slidesToShow: 1,
-              dots:false
-            }
-          }
-        ]
-      });
 });
