@@ -2,6 +2,7 @@ $(document).ready(function(){
   //--------------  nav-toggle  --------------
   let navToggleMenu = $(".header__nav"); 
 	let navToggle = $(".nav-toggle");
+  let logo = $('.logo');
 
   navToggle.click(function() {
     if($(window).width() <= '480'){
@@ -15,7 +16,8 @@ $(document).ready(function(){
     // close nav-togle on click outside
   $(document).click(function (e) { 
     if ( ! navToggle.is(e.target) && navToggle.has(e.target).length === 0 &&
-         ! navToggleMenu.is(e.target) && navToggleMenu.has(e.target).length === 0
+         ! navToggleMenu.is(e.target) && navToggleMenu.has(e.target).length === 0 &&
+         ! logo.is(e.target) && logo.has(e.target).length === 0 
 		    ) {
         $('.nav-toggle').removeClass('nav-toggle--active');
         $('.header__nav').removeClass('header__nav--active');
@@ -93,17 +95,32 @@ $(document).ready(function(){
   }
 
   // ------------  number counter  -------------
-
-  $('.count').each(function() {
-    $(this).prop('Counter', 0).animate({
-      Counter:$(this).text()
-    },{
-      duration: 1000,
-      easing: 'swing',
-      step: function(now){
-        $(this).text(Math.ceil(now));
-      }
+  function start_count(){
+    $('.count').each(function() {
+      $(this).prop('Counter', 0).animate({
+        Counter:$(this).text()
+      },{
+        duration: 3000,
+        easing: 'swing',
+        step: function(now){
+          $(this).text(Math.ceil(now));
+        }
+      });
     });
+  }; 
+
+  // animate to scrool counter
+  let element = $('.count');
+  $counter = 0;
+  $(window).scroll(function(){
+    let scroll = $(window).scrollTop() + $(window).height();
+    let offset = element.offset().top;
+
+    if (scroll > offset && $counter == 0) {
+        start_count();
+        $('.line-bar__line').css({ 'animation': 'line-grow 1.5s linear 0s 1 alternate'});
+        $counter = 1;
+    }
   });
 
   // ------------  smooth scroll  -------------
@@ -129,35 +146,10 @@ $(document).ready(function(){
 
   // ------------   tabs ---------------
 
-  //  let accordeon = function() {
-  //   let data = $('.list__container').attr('data-acordeon');
-
-  //   $('.list__question').on('click', function(){
-  //     if(data === 'close'){
-  //       $('.list__answer').slideUp();
-  //       $('list__item').toggleClass('list--active');
-  //          if ($(this).hasClass('list--active')){
-  //           $(this).toggleClass('list--active');
-  //         } else {
-  //           $('.list__question').removeClass('list--active');
-  //         }
-  //       } 
-  //      else{
-  //        $(this).toggleClass('list--active');
-  //      } 
-  //      $(this).next('.list__answer').not(':animated').slideToggle();
-  //   });
-  //  }
-
-  //  accordeon();
-
   $(".list__container .list__answer").hide().prev().click(function() {
     $(this).parents(".list__container").find(".list__answer").not(this).slideUp().prev().removeClass("list--active");
     $(this).next().not(":visible").slideDown().prev().addClass("list--active");
   });
-
-
-
 
   // ------------  slick lider  --------------
     $('.profitability-slider').slick({
@@ -233,5 +225,6 @@ $(document).ready(function(){
     offset: 100,
     mirror: false,
     disable: false,
+    once: true
   });
 });

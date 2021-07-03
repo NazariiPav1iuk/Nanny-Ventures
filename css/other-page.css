@@ -11,6 +11,10 @@
 }
 /*--------------- Join Nanny Ventures subpage 1---------------*/
 /*--------------- banner ---------------*/
+.button-hide{
+    display: none;
+}
+
 .banner{
     background:url('../img/banners/BG-14.jpg');
     background-size:cover;
@@ -40,7 +44,7 @@
 /*--------------- banner-list ---------------*/
 
 .list__container{
-    height: 300px;
+    height: 330px;
 }
 .text__tittle,
 .list__tittle {
@@ -62,6 +66,9 @@
     color:var(--white);
     position: relative;
 }
+.list__question:hover{
+    cursor: pointer;
+}
 .list__question::before{
     content: '+';
     display: block;
@@ -76,7 +83,7 @@
     font-size: 14px;
     position: absolute;
     left:-15px;
-    top:0px;
+    top:0px; 
 }
 .list__answer {
     font-weight: 500;
@@ -223,6 +230,9 @@
         margin-left: 5px;
         padding: 7.5px 15px;
         font-size: 15px;
+    }
+    .button-hide{
+        display: flex;
     }
 }
 
