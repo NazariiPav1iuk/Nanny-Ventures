@@ -7,11 +7,11 @@
     <title>Nanny Ventures</title>
     <!-- styles -->
     <link rel="stylesheet" href="css/reset.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- sprite -->
-
+  <div class="page-wrapper">
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -19,7 +19,7 @@
                 <div class="logo">
                     <img class="logo__icon" src="img/icons/logo.svg" alt="logo">
                 </div>
-                <div class="nav-toggle ">
+                <div class="nav-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -27,14 +27,14 @@
                 <div class="header__nav">
                     <nav>
                        <ul class="nav">
-                           <li><a href="#" class="nav__item nav__item--active">Про нас</a></li>
-                           <li><a href="#" class="nav__item">Nanny.academy</a></li>
-                           <li><a href="#" class="nav__item">DAO</a></li>
+                           <li><a href="#pro-nas" class="nav__item yakor">Про нас</a></li>
+                           <li><a href="/pages/Nanny-Academy-sub.html" class="nav__item yakor">Nanny.academy</a></li>
+                           <li><a href="/pages/DAO-sub.html" class="nav__item yakor">DAO</a></li>
                        </ul> 
                     </nav>
                     <div class="header__nav-bottom">
                       <div class="header-button">
-                        <a href="#" class="header-button__text">Join Nanny Ventures</a>
+                        <a href="/pages/Nanny-Ventures-sub.html" class="header-button__text">Join Nanny Ventures</a>
                       </div>
                       <div class="header__contacts contacts">
                         <p class="contacts__email">E-mail: info@nanny.ventures</p>
@@ -48,7 +48,6 @@
                         </div>
                       </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -68,19 +67,19 @@
 
     <!-- about -->
 
-    <section class="about">
+    <section class="about" id="pro-nas">
       <div class="container">
         <div class="about__inner">
 
           <!-- article nanny ventures -->
           <div class="article">
-            <div class="article__left">
+            <div class="article__left" data-aos="fade-right">
               <div class="article__icon">
                 <img src="img/icons/profits.svg" alt="">
               </div>
               <h2 class="article__tittle tittle">Nanny ventures</h2>
             </div>
-            <div class="article__right">
+            <div class="article__right" data-aos="fade-left">
               <p class="article__subscribe">Команда професійних трейдерів та аналітиків 
                 з досвідом роботи на фондовому та криптовалютному ринках. 
                 Інвестуємо в блокчейн проекти з 2015 року. Основна ціль це 
@@ -92,13 +91,13 @@
 
           <!-- article why crypto -->
           <div class="article">
-            <div class="article__left">
+            <div class="article__left" data-aos="fade-right">
               <div class="article__icon">
                 <img src="img/icons/cryptocurrency.svg" alt="">
               </div>
               <h2 class="article__tittle tittle">Чому успішні люди вибирають криптовалютy?</h2>
             </div>
-            <div class="article__right">
+            <div class="article__right" data-aos="fade-left">
               <p class="article__subscribe">Технологія блокчейн є відносно новою, 
                 проте її унікальність полягає в усуненні фактору довіри до третіх осіб. 
                 Питання довіри в фінансах завжди було стримуючим фактором. Наша команда передбачає, 
@@ -120,7 +119,7 @@
               <div class="profitability__row">
                 <p class="profitability__text">Якщоб я вклав</p>
                 <div class="profitability__input--wrapper">
-                  <input type="number" placeholder="1,000" class="profitability__input">
+                  <input id="profitability__input" type="number" placeholder="1,000"  min="1" max="999999999" class="profitability__input">
                 </div>
                 <p class="profitability__text">у 2020 року</p>
               </div>
@@ -132,11 +131,11 @@
                 <div class="slider-item__box">
                   <div class="profit">
                     <div class="profit__text">Прибуток:</div>
-                    <div class="profit__percent">+964%</div>
+                    <div class="profit__percent" id='data-crypto' data-crypto='964'>+964%</div>
                   </div>
                   <div class="your-profit">
                     <div class="your-profit__text">Я б отримав:</div>
-                    <div class="your-profit__value">$10,640</div>
+                    <div class="your-profit__value" id="crypto-res"></div>
                   </div>
                 </div>
               </div>
@@ -146,11 +145,11 @@
                 <div class="slider-item__box">
                   <div class="profit">
                     <div class="profit__text">Прибуток:</div>
-                    <div class="profit__percent">+964%</div>
+                    <div class="profit__percent" id='data-tesla' data-tesla='372'>+372%</div>
                   </div>
                   <div class="your-profit">
                     <div class="your-profit__text">Я б отримав:</div>
-                    <div class="your-profit__value">$10,640</div>
+                    <div class="your-profit__value" id="tesla-res"></div>
                   </div>
                 </div>
               </div>
@@ -160,11 +159,11 @@
                 <div class="slider-item__box">
                   <div class="profit">
                     <div class="profit__text">Прибуток:</div>
-                    <div class="profit__percent">+964%</div>
+                    <div class="profit__percent"  id='data-gold' data-gold='114'>+114%</div>
                   </div>
                   <div class="your-profit">
                     <div class="your-profit__text">Я б отримав:</div>
-                    <div class="your-profit__value">$10,640</div>
+                    <div class="your-profit__value" id="gold-res"></div>
                   </div>
                 </div>
               </div>
@@ -174,11 +173,11 @@
                 <div class="slider-item__box">
                   <div class="profit">
                     <div class="profit__text">Прибуток:</div>
-                    <div class="profit__percent">+964%</div>
+                    <div class="profit__percent" id="data-sp" data-sp='820'>+820%</div>
                   </div>
                   <div class="your-profit">
                     <div class="your-profit__text">Я б отримав:</div>
-                    <div class="your-profit__value">$10,640</div>
+                    <div class="your-profit__value" id="sp-res"></div>
                   </div>
                 </div>
               </div>
@@ -248,13 +247,13 @@
         <section class="safe">
           <div class="container">
             <div class="article">
-              <div class="article__left">
+              <div class="article__left" data-aos="fade-right">
                 <div class="article__icon">
                   <img src="img/icons/shield.svg" alt="">
                 </div>
                 <h2 class="article__tittle tittle">Прозорість та безпека</h2>
               </div>
-              <div class="article__right">
+              <div class="article__right" data-aos="fade-left">
                 <p class="article__subscribe">Криптовалюта найкраща інвестиція.  
                   Вона відкриває безмежні можливості для тих, хто прагне до стабільності і успіху.  
                   І цей факт доведений на ділі: жодна з бірж-сировинна, товарна фондова і жоден 
@@ -294,10 +293,10 @@
             </div>
             <div class="line-bar__bottom">
               <div class="line-bar__percent"></div>
-              <div class="line-bar__percent">+477%</div>
-              <div class="line-bar__percent">+42%</div>
-              <div class="line-bar__percent">+134%</div>
-              <div class="line-bar__percent">+484%</div>
+              <div class="line-bar__percent">+<span class="count">477</span>%</div>
+              <div class="line-bar__percent">+<span class="count">42</span>%</div>
+              <div class="line-bar__percent">+<span class="count">134</span>%</div>
+              <div class="line-bar__percent">+<span class="count">484</span>%</div>
               <div class="line-bar__percent"></div>
             </div>
           </div>
@@ -308,13 +307,13 @@
         <section class="insurance">
           <div class="container">
             <div class="article">
-              <div class="article__left">
+              <div class="article__left" data-aos="fade-right">
                 <div class="article__icon">
                   <img src="img/icons/insurance.svg" alt="">
                 </div>
                 <h2 class="article__tittle tittle">Політика конфіденційності</h2>
               </div>
-              <div class="article__right">
+              <div class="article__right" data-aos="fade-left">
                 <p class="article__subscribe">Криптовалюта найкраща інвестиція.  
                   Вона відкриває безмежні можливості для тих, хто прагне до стабільності і успіху.  
                   І цей факт доведений на ділі: жодна з бірж-сировинна, товарна фондова і 
@@ -333,7 +332,7 @@
     <div class="briefcase">
       <div class="container">
         <div class="briefcase__inner">
-          <div class="briefcase__head">
+          <div class="briefcase__head" data-aos="fade-right">
             <img class="briefcase__icon" src="img/icons/briefcase.svg"></img>
             <div class="briefvase__tittle tittle">Наш Портфель / Портфель Nanny</div>
           </div>
@@ -412,9 +411,9 @@
               
               <nav>
                 <ul class="basement__nav">
-                  <li><a class="basement-nav__item" href="#">Про нас</a></li>
-                  <li><a class="basement-nav__item" href="#">Nanny.academy</a></li>
-                  <li><a class="basement-nav__item" href="#">DAO</a></li>
+                  <li><a class="basement-nav__item" href="/index.html#pro-nas">Про нас</a></li>
+                  <li><a class="basement-nav__item" href="/pages/Nanny-Academy-sub.html">Nanny.academy</a></li>
+                  <li><a class="basement-nav__item" href="/pages/DAO-sub.html">DAO</a></li>
                 </ul>
               </nav>
 
@@ -444,14 +443,15 @@
             </div>
           </div>
         </section>
-
-    </footer>
-
+    </footer> 
+  </div>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- slick -->
     <script src="js/slick.min.js"></script>
+    <!-- animate aos -->
+    <script src="js/aos.js"></script>
     <!-- js -->
     <script src="js/script.js"></script>
 </body>
