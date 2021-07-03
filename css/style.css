@@ -136,15 +136,6 @@ html, body{
     display:block;
     margin: 3px 0;
 }
-.nav-toggle--active span:nth-child(2){
-    display: none;
-}
-.nav-toggle--active span:first-child{
-    transform: translateY(2px) rotate(45deg)
-}
-.nav-toggle--active span:last-child{
-    transform: translateY(-3px) rotate(-45deg)
-}
 /* header-hovers */
 .header-button:hover{
     cursor: pointer;
@@ -520,7 +511,6 @@ html, body{
     width: 100%;
     background-color: white;
     margin-top: 5px;
-    /* animation: line-grow 1.5s linear 0s 1 alternate ; */
 }
 .line-bar__middle {
     display:flex;
@@ -849,6 +839,10 @@ html, body{
     .subscribe__subtittle{
         font-size: 14px;
     }
+    /* funds */
+    .line-bar__percent{
+        font-size: 24px;
+    }
 }
 @media (max-width: 768px) {
     .header__nav{
@@ -969,6 +963,28 @@ html, body{
 }
 
 @media (max-width: 579px) {
+     /* nav-toggle */
+     .header__nav{
+        width: 100%;
+        top: 69px;
+        left: 0;
+        border-radius: 0;
+        height: calc(100vh - 69px);
+    }
+    .header__nav-bottom{
+        display: flex;
+        flex-direction: column;
+    }
+    .header-button{
+        max-width: 196px;
+    }
+    .nav{
+        margin-top: 72px;
+    }
+    .header__contacts{
+        display: block;
+        margin-top: 50px;
+    }
     /* banner */
     .banner__tittle {
         font-size: 36px;
@@ -1002,29 +1018,44 @@ html, body{
         margin-left: 20px;
     }
     /* briefcase */
-    .briefcase__content{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        overflow-x: scroll;
-        justify-content: stretch;
+    .briefcase__row:last-child{
+      display: none;
     }
-    .briefcase__row{
-        padding: 0;
-        width: calc(50vw - 25px);
-    }
-    .briefcase__item{
-        width: 165px;
-        margin: 0 auto;
-    }
-    /* linebar */
-    .line-bar{
-        overflow-x: scroll;
+    .funds__tittle{
         width: 100%;
+    }
+    .funds__count{
+        width: 100%;
+        margin-left: 0;
+    }
+    /* funds */
+    .line-bar{
+        width: 1150px;
+    }
+    .line-bar--wrapper{
+        overflow-x: scroll;
+    }
+    .line-bar--wrapper::-webkit-scrollbar{
+        display:none;
+    }
+    .line-bar__percent{
+        font-size: 36px;
+    }
+    .line-bar__percent:first-child,
+    .line-bar__dot:first-child,
+    .line-bar__year:first-child{
+        width: 7%;
+    }
+    .line-bar__percent,
+    .line-bar__dot,
+    .line-bar__year{
+        width: 18.6%;
     }
     /* copyright */
     .copyright{
         margin-top: -70px;
     }
+    
     .copyright__inner{
         flex-direction: column-reverse;
         justify-content: center;
@@ -1043,28 +1074,7 @@ html, body{
     .container-slider-579px{
         padding: 0 0px;
     }
-    /* nav-toggle */
-    .header__nav{
-        width: 100%;
-        top: 69px;
-        left: 0;
-        border-radius: 0;
-        height: calc(100vh - 69px);
-    }
-    .header__nav-bottom{
-        display: flex;
-        flex-direction: column;
-    }
-    .header-button{
-        max-width: 196px;
-    }
-    .nav{
-        margin-top: 72px;
-    }
-    .header__contacts{
-        display: block;
-        margin-top: 50px;
-    }
+   
     /* article */
     .article__subscribe{
         font-size: 14px;
@@ -1103,10 +1113,17 @@ html, body{
         font-size: 24px;
     }
     /* briefcase */
+    .briefcase__row:nth-child(2){
+       display:none;
+    }
     .briefcase__row{
-        width: calc(100vw - 50px);
+        align-items: center;
+    }
+    .briefcase__item{
+        width: 120%;
     }
     /* subscribe */
+   
     .subscribe__inner{
         flex-direction: column;
     }
@@ -1123,6 +1140,17 @@ html, body{
     }
     .subscribe__form{
         margin-top: 20px;
+    }
+    /* funds */
+    .funds{
+        padding: 67px 0 70px 0;
+    }
+    .funds__count,
+    .funds__tittle{
+       font-size: 24px;
+    }
+    .funds__tetx{
+        margin-top: 50px;
     }
     /* copyright */
     .copyright .container{
@@ -1152,4 +1180,16 @@ html, body{
 }
 .header__nav--active{
     display: flex!important;
+}
+.nav-toggle--active span:nth-child(2){
+    display: none;
+}
+.nav-toggle--active span:first-child{
+    transform: translateY(2px) rotate(45deg)
+}
+.nav-toggle--active span:last-child{
+    transform: translateY(-3px) rotate(-45deg)
+}
+.body-scroll-off{
+    overflow: hidden;
 }

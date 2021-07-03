@@ -5,8 +5,10 @@ $(document).ready(function(){
   let logo = $('.logo');
 
   navToggle.click(function() {
-    if($(window).width() <= '480'){
+    if($(window).width() <= '580'){
       navToggleMenu.slideToggle(200).toggleClass('header__nav--active');
+      navToggle.toggleClass('nav-toggle--active');
+      $('body').toggleClass('body-scroll-off');
     } else {
       navToggle.toggleClass('nav-toggle--active');
       navToggleMenu.toggleClass('header__nav--active');
@@ -221,6 +223,7 @@ $(document).ready(function(){
       });
       
       // --------- aos ---------
+      
   AOS.init({
     offset: 100,
     mirror: false,
