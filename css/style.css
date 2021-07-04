@@ -1046,8 +1046,8 @@ body {
 		display: flex;
 		flex-direction: column;
 	}
-	.header-button {
-		max-width: 196px;
+	.header-button__text {
+		padding: 11px 25px;
 	}
 	.nav {
 		margin-top: 72px;
@@ -1055,9 +1055,6 @@ body {
 	.header__contacts {
 		display: block;
 		margin-top: 50px;
-	}
-	.header-button{
-		width: 202px;	
 	}
 	/* banner */
 	.banner__tittle {
