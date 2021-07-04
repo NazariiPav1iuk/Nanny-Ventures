@@ -46,17 +46,26 @@ $(document).ready(function(){
         $('#gold-res').empty().append(`$${numberWithCommas(goldRes)}`);
         $('#sp-res').empty().append(`$${numberWithCommas(spRes)}`);
 
-  // after pres enter
-  prfInput.keydown(function (e) { 
+  // only numbers
+  $(prfInput).keypress(function (e) {
+    var txt = String.fromCharCode(e.which);
+    if (!txt.match(/[A-Za-z0-9&. ]/)) {
+        return false;
+    }
+  });
+  // keyup
+  prfInput.keyup(function () { 
     
-    if(e.which == 13) {
-
       let inputValue =  prfInput.val();
 
       if(inputValue == ''){
+        $('#crypto-res').empty().append(`$${numberWithCommas(cryptoRes)}`);
+        $('#tesla-res').empty().append(`$${numberWithCommas(teslaRes)}`);
+        $('#gold-res').empty().append(`$${numberWithCommas(goldRes)}`);
+        $('#sp-res').empty().append(`$${numberWithCommas(spRes)}`);
         return;
       } else if(inputValue >= 0){
-        
+       
         let cryptoRes =  Math.trunc(parseInt(inputValue) + (inputValue * (cryptoPercent / 100)));
         let teslaRes =   Math.trunc(parseInt(inputValue) + (inputValue * (teslaPercent / 100)));
         let goldRes =   Math.trunc(parseInt(inputValue) + (inputValue * (goldPercent / 100)));
@@ -88,7 +97,6 @@ $(document).ready(function(){
           $('#sp-res').css({'font-size':'36px', 'margin-top':'0'});
         }
       }
-    }
   });
 
   // numbers with comas
@@ -152,6 +160,9 @@ $(document).ready(function(){
     $(this).parents(".list__container").find(".list__answer").not(this).slideUp().prev().removeClass("list--active");
     $(this).next().not(":visible").slideDown().prev().addClass("list--active");
   });
+
+  $(".list__container .list__ansver--start-active").show();
+  $(".list__container .list__question--start-active").addClass('list--active');
 
   // ------------  slick lider  --------------
     $('.profitability-slider').slick({

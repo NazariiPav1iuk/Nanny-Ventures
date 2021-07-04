@@ -1,174 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join DAO</title>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/other-page.css">
-    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join DAO</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link rel="stylesheet" href="../css/other-page.min.css">
+  <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#5bbad5">
 </head>
+
 <body>
-    
+  <div class="page-wrapper">
+    <div class="content">
       <!-- Header -->
       <header class="header">
         <div class="container">
-            <div class="header__inner">
-                <div class="logo">
-                    <img class="logo__icon" src="../img/icons/logo.svg" alt="logo">
-                </div>
-                <div class="nav-toggle ">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="header__nav">
-                    <nav>
-                       <ul class="nav margin-right--none">
-                           <li><a href="/index.html#pro-nas" class="nav__item">Про нас</a></li>
-                           <li><a href="/pages/Nanny-Academy-sub.html" class="nav__item">Nanny.academy</a></li>
-                           <li><a href="/pages/DAO-sub.html" class="nav__item nav__item--active">DAO</a></li>
-                       </ul> 
-                    </nav>
-                    <div class="header__nav-bottom">
-                      <div class="header-button button-hide">
-                        <a href="../pages/Nanny-Ventures-sub.html" class="header-button__text">Join Nanny Ventures</a>
-                      </div>
-                      <div class="header__contacts contacts">
-                        <p class="contacts__email">E-mail: info@nanny.ventures</p>
-                        <div class="contatcts__social social">
-                          <a class="social__link" href="#">
-                            <img src="../img/icons/telegram.svg" alt="" class="social__icon">
-                          </a>
-                          <a class="social__link" href="#">
-                            <img src="../img/icons/telegram.svg" alt="" class="social__icon">
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                </div>
+          <div class="header__inner">
+            <div class="logo">
+              <img class="logo__icon" src="../img/icons/logo.svg" alt="logo">
             </div>
+            <div class="nav-toggle ">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="header__nav">
+              <nav>
+                <ul class="nav margin-right--none">
+                  <li><a href="/index.html#pro-nas" class="nav__item">Про нас</a></li>
+                  <li><a href="/pages/Nanny-Academy-sub.html" class="nav__item">Nanny.academy</a></li>
+                  <li><a href="/pages/DAO-sub.html" class="nav__item nav__item--active">DAO</a></li>
+                </ul>
+              </nav>
+              <div class="header__nav-bottom">
+                <div class="header-button button-hide">
+                  <a href="../pages/Nanny-Ventures-sub.html" class="header-button__text">Join Nanny Ventures</a>
+                </div>
+                <div class="header__contacts contacts">
+                  <p class="contacts__email">E-mail: info@nanny.ventures</p>
+                  <div class="contatcts__social social">
+                    <a class="social__link" href="#">
+                      <svg class="social__icon">
+                        <use xlink:href="../img/sprite.svg#free-icon-instagram-symbol-25425"></use>
+                      </svg>
+                    </a>
+                    <a class="social__link" href="#">
+                      <svg class="social__icon translate-left">
+                        <use xlink:href="../img/sprite.svg#free-icon-telegram-2111708"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </header>
+      </header>
 
-    <!-- banner -->
+      <!-- banner -->
 
-    <section class="banner">
+      <section class="banner">
         <div class="container">
           <div class="banner__inner">
             <div class="banner__content">
-                <h1 class="banner__tittle">DAOat</h1>
-                <div class="banner__text">
-                    <h2 class="text__tittle">Об'єкт доступу до даних</h2>
-                    <p class="text__subscribe">
-                        (англ. data access object) (DAO) - об'єкт що надає абстрактний інтерфейс 
-                        до деяких видів баз даних чи механізмів персистентності реалізуючи певні 
-                        операції без розкриття деталей бази даних. Він надає відображення від 
-                        програмних викликів до рівня персистентності. Така ізоляція розділює 
-                        запити до даних в термінах предметної області та їх реалізацію засобами СКБД.
-                    </p>
-                    <p class='text__subscribe'>
-                        Цей паттерн проєктування можна застосовувати до більшості мов програмування, 
-                        видів програмного забезпечення з потребою персистентності та більшості типів 
-                        баз даних, але він традиційно асоціюється з застосунками Java EE та реляційними 
-                        БД доступ до яких здійснюють через JDBC API що пов'язано з походженням паттерна 
-                        із збірки найкращих практик Sun Microsystems.
-                    </p>
-                </div>
+              <h1 class="banner__tittle">DAOat</h1>
+              <div class="banner__text">
+                <h2 class="text__tittle">Об'єкт доступу до даних</h2>
+                <p class="text__subscribe">
+                  (англ. data access object) (DAO) - об'єкт що надає абстрактний інтерфейс
+                  до деяких видів баз даних чи механізмів персистентності реалізуючи певні
+                  операції без розкриття деталей бази даних. Він надає відображення від
+                  програмних викликів до рівня персистентності. Така ізоляція розділює
+                  запити до даних в термінах предметної області та їх реалізацію засобами СКБД.
+                </p>
+                <p class='text__subscribe'>
+                  Цей паттерн проєктування можна застосовувати до більшості мов програмування,
+                  видів програмного забезпечення з потребою персистентності та більшості типів
+                  баз даних, але він традиційно асоціюється з застосунками Java EE та реляційними
+                  БД доступ до яких здійснюють через JDBC API що пов'язано з походженням паттерна
+                  із збірки найкращих практик Sun Microsystems.
+                </p>
+              </div>
             </div>
             <div class="banner__form form">
-                <h3 class="form__tittle">Повідомити мені про початок</h3>
-                <input type="text" class="form__input" placeholder="Iм’я">
-                <input type="number" class="form__input" placeholder="Номер">
-                <input type="email" class="form__input" placeholder=" E-mail">
-                <button class="form__button button">Бути першим</button>
+              <h3 class="form__tittle">Повідомити мені про початок</h3>
+              <input type="text" class="form__input" placeholder="Iм’я">
+              <input type="number" class="form__input" placeholder="Номер">
+              <input type="email" class="form__input" placeholder=" E-mail">
+              <button class="form__button button">Бути першим</button>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
+    </div>
 
     <!-- footer -->
 
     <footer class="footer">
-  
-          <!-- subscribe -->
-  
-          <section class="subscribe">
-            <div class="container">
-              <div class="subscribe__inner">
-                <div class="subscribe__content">
-                  <h3 class="subscribe__tittle">Підпишись на наші оновлення</h3>
-                  <p class="subscribe__subtittle">Вкажіть свої контактні дані і ми зв'яжемось з Вами найближчим часом</p>
-                </div>
-                <div class="subscribe__form">
-                  <input type="text" class="subscribe__input input" placeholder="Контактні дані">
-                  <button class="subscribe__button button" type="submit">Підписатись</button>
-                </div>
+      <!-- subscribe -->
+      <section class="subscribe">
+        <div class="container">
+          <div class="subscribe__inner">
+            <div class="subscribe__content">
+              <h3 class="subscribe__tittle">Підпишись на наші оновлення</h3>
+              <p class="subscribe__subtittle">Вкажіть свої контактні дані і ми зв'яжемось з Вами найближчим часом</p>
+            </div>
+            <div class="subscribe__form">
+              <input type="text" class="subscribe__input input" placeholder="Контактні дані">
+              <button class="subscribe__button button" type="submit">Підписатись</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="basement">
+        <div class="container">
+          <div class="basement__inner">
+            <div class="basement__about">
+              <div class="basement__logo logo">
+                <img class="logo__icon" src="../img/icons/logo.svg" alt="">
+              </div>
+              <p class="basement__text">
+                Правильні інвестиції в цифрові активи.
+                Криптовалютний та фондовий ринки.
+              </p>
+            </div>
+            <nav>
+              <ul class="basement__nav">
+                <li><a class="basement-nav__item" href="/index.html#pro-nas">Про нас</a></li>
+                <li><a class="basement-nav__item" href="/pages/Nanny-Academy-sub.html">Nanny.academy</a></li>
+                <li><a class="basement-nav__item" href="/pages/DAO-sub.html">DAO</a></li>
+              </ul>
+            </nav>
+            <div class="basement__contacts contacts">
+              <h3 class="contacts__tittle">Контакти</h3>
+              <p class="contacts__email">E-mail: info@nanny.ventures</p>
+              <div class="contatcts__social social">
+                <a class="social__link" href="#">
+                  <svg class="social__icon">
+                    <use xlink:href="../img/sprite.svg#free-icon-instagram-symbol-25425"></use>
+                  </svg>
+                </a>
+                <a class="social__link" href="#">
+                  <svg class="social__icon translate-left">
+                    <use xlink:href="../img/sprite.svg#free-icon-telegram-2111708"></use>
+                  </svg>
+                </a>
               </div>
             </div>
-          </section>
-  
-          <section class="basement">
-            <div class="container">
-              <div class="basement__inner">
-  
-                <div class="basement__about">
-                  <div class="basement__logo logo">
-                    <img class="logo__icon" src="../img/icons/logo.svg" alt="">
-                  </div>
-                  <p class="basement__text">
-                    Правильні інвестиції в цифрові активи.
-                    Криптовалютний та фондовий ринки.
-                  </p>
-                </div>
-                
-                <nav>
-                  <ul class="basement__nav">
-                    <li><a class="basement-nav__item" href="/index.html#pro-nas">Про нас</a></li>
-                    <li><a class="basement-nav__item" href="/pages/Nanny-Academy-sub.html">Nanny.academy</a></li>
-                    <li><a class="basement-nav__item" href="/pages/DAO-sub.html">DAO</a></li>
-                  </ul>
-                </nav>
-  
-                <div class="basement__contacts contacts">
-                  <h3 class="contacts__tittle">Контакти</h3>
-                  <p class="contacts__email">E-mail: info@nanny.ventures</p>
-                  <div class="contatcts__social social">
-                    <a class="social__link" href="#">
-                      <img src="../img/icons/telegram.svg" alt="" class="social__icon">
-                    </a>
-                    <a class="social__link" href="#">
-                      <img src="../img/icons/telegram.svg" alt="" class="social__icon">
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-  
-          <!-- copyright -->
-  
-          <section class="copyright">
-            <div class="container">
-              <div class="copyright__inner">
-                <p class="text__left">© 2020, All right reserved. Nanny Ventures</p>
-                <p class="text__right">Privacy Policy</p>
-              </div>
-            </div>
-          </section>
-      </footer>
-   <!-- jQuery -->
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <!-- slick -->
-   <script src="../js/slick.min.js"></script>
-   <!-- animate aos -->
-   <script src="../js/aos.js"></script>
-   <!-- js -->
-   <script src="../js/script.js"></script>
+          </div>
+        </div>
+      </section>
+      <!-- copyright -->
+      <section class="copyright">
+        <div class="container">
+          <div class="copyright__inner">
+            <p class="text__left">© 2020, All right reserved. Nanny Ventures</p>
+            <p class="text__right">Privacy Policy</p>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </div>
+
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- slick -->
+  <script src="../js/slick.min.js"></script>
+  <!-- animate aos -->
+  <script src="../js/aos.js"></script>
+  <!-- js -->
+  <script src="../js/script.min.js"></script>
 </body>
+
 </html>

@@ -1,263 +1,292 @@
-:root{
-    /* fonts */
-    --AvenirNext: 'Avenir Next Cyr';
-    --FuturaPT: 'FuturaPT';
-    /* colors */
-    --white: #ffff;
-    --textDark: #303952;
-    --blue:#001DC5;
-    --purple:#654CD3;
-    --gradient:linear-gradient(75.99deg, #7D4DCF -0.1%, #2F49D9 45.15%, #212071 104.58%);
+:root {
+	/* fonts */
+	--AvenirNext: 'Avenir Next Cyr';
+	--FuturaPT: 'FuturaPT';
+	/* colors */
+	--white: #ffff;
+	--textDark: #303952;
+	--blue: #001dc5;
+	--purple: #654cd3;
+	--gradient: linear-gradient(
+		75.99deg,
+		#7d4dcf -0.1%,
+		#2f49d9 45.15%,
+		#212071 104.58%
+	);
 }
 /*--------------- Join Nanny Ventures subpage 1---------------*/
 /*--------------- banner ---------------*/
-.button-hide{
-    display: none;
+.button-hide {
+	display: none;
 }
-
-.banner{
-    background:url('../img/banners/BG-14.jpg');
-    background-size:cover;
-    background-repeat: no-repeat;
-    height: 105vh;
+.banner {
+	background: url('../img/banners/BG-14.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 105vh;
 }
-.banner:after{
-    height: 105vh;
+.banner:after {
+	height: 105vh;
 }
-
 .banner__inner {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 .banner__content {
-    width: 50%;
-    z-index: 1;  
+	width: 50%;
+	z-index: 1;
 }
 .banner__tittle {
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 102.7%;
-    font-family: var(--FuturaPT);
+	font-weight: 700;
+	font-size: 64px;
+	line-height: 102.7%;
+	font-family: var(--AvenirNext);
 }
 /*--------------- banner-list ---------------*/
 
-.list__container{
-    height: 330px;
+.list__container {
+	height: 350px;
 }
 .text__tittle,
 .list__tittle {
-    font-size: 28px;
-    line-height: 180%;
-    font-weight: 400;
-    color:var(--white);
-    padding-top: 24px;
+	font-size: 28px;
+	line-height: 180%;
+	font-weight: 400;
+	color: var(--white);
+	padding-top: 24px;
 }
 .list__item {
-    max-width: 520px;
-    display: flex;
-    padding: 6px 0 6px 20px;
+	max-width: 520px;
+	display: flex;
+	padding: 6px 0 6px 20px;
 }
 .list__question {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 180%;
-    color:var(--white);
-    position: relative;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 180%;
+	color: var(--white);
+	position: relative;
 }
-.list__question:hover{
-    cursor: pointer;
+.list__question:hover {
+	cursor: pointer;
 }
-.list__question::before{
-    content: '+';
-    display: block;
-    font-size: 12px;
-    position: absolute;
-    left:-15px;
-    top:0px;
+.list__question::before {
+	content: '+';
+	display: block;
+	font-size: 12px;
+	position: absolute;
+	left: -15px;
+	top: 0px;
 }
-.list__question.list--active::before{
-    content: '-';
-    display: block;
-    font-size: 14px;
-    position: absolute;
-    left:-15px;
-    top:0px; 
+.list__question.list--active::before {
+	content: '-';
+	display: block;
+	font-size: 14px;
+	position: absolute;
+	left: -15px;
+	top: 0px;
 }
 .list__answer {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 150%;
-    color:var(--white);
-    display: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-clamp: 3;
-    box-orient: vertical;
-    display: -moz-box;
-    -moz-box-orient: vertical;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 150%;
+	color: var(--white);
+	display: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-clamp: 5;
+	box-orient: vertical;
+	display: -moz-box;
+	-moz-box-orient: vertical;
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
 }
 .banner__btns {
-    margin-top: 42px;
+	margin-top: 42px;
 }
 .banner__contract {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
 }
 .contract__icon {
-    width: 64px;
-    height: 64px;
+	width: 64px;
+	height: 64px;
+}
+.banner__contract:hover .contract__icon{
+    background:var(--gradient);
+    border-radius: 100%;
+    cursor:pointer;
 }
 .contract__link {
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 150%;
-    text-align: center;
-    color:var(--white);
-    padding: 7.5px 22px;
-    border: 2px solid var(--white);
-    box-sizing: border-box;
-    border-radius: 32px;
-    margin-left: 18px;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 150%;
+	text-align: center;
+	color: var(--white);
+	padding: 7.5px 22px;
+	border: 2px solid var(--white);
+	box-sizing: border-box;
+	border-radius: 32px;
+	margin-left: 18px;
 }
-.contract__link:hover{
-    background-color:var(--white);
-    cursor: pointer;
-    color:var(--purple);
-    transition: all .1s linear;
+.banner__contract:hover:hover .contract__link{
+	background-color: var(--white);
+	cursor: pointer;
+	color: var(--purple);
 }
 /*--------------- banner-form ---------------*/
 .banner__form {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    max-width: 458px; 
-    margin-left: 20px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	max-width: 458px;
+	margin-left: 20px;
 }
 .form {
-    background: #FFFFFF;
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
-    padding: 52px 50px;
-    z-index: 1;
+	background: #ffffff;
+	box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
+	border-radius: 16px;
+	padding: 52px 50px;
+	z-index: 1;
 }
 .form__tittle {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 150%;
-    text-align: center;
-    color:var(--textDark);
-    margin-bottom: 36px;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 150%;
+	text-align: center;
+	color: var(--textDark);
+	margin-bottom: 36px;
 }
 .form__input {
-    background: #FFFFFF;
-    border: 1px solid #287DE0;
-    box-shadow: inset 0px 1px 4px rgba(48, 57, 82, 0.15);
-    border-radius: 46px;
-    padding: 13px 0 13px 23px;
-    margin: 11px 0;
+	background: #ffffff;
+	border: 1px solid #287de0;
+	box-shadow: inset 0px 1px 4px rgba(48, 57, 82, 0.15);
+	border-radius: 46px;
+	padding: 13px 0 13px 23px;
+	margin: 11px 0;
 }
 .form__button {
-    margin-top: 45px;
+	margin-top: 45px;
 }
 
 /*--------------- Join Nanny Academy  subpage 2 ---------------*/
 .text__down,
-.text__subscribe{
-    font-size: 16px;
-    line-height: 180%;
-    color:var(--white);
-    font-weight: 500;
-    max-width: 552px;
-    margin-top: 50px;
-    display: block;
+.text__subscribe {
+	font-size: 16px;
+	line-height: 180%;
+	color: var(--white);
+	font-weight: 500;
+	max-width: 552px;
+	margin-top: 50px;
+	display: block;
 }
-.margin-right--none{
-    margin-right: 0;
+.margin-right--none {
+	margin-right: 0;
 }
 /*--------------- @media ---------------*/
 @media (max-width: 1024px) {
-    .banner{
-        background-size:cover;
-        height: auto;
-        padding-bottom: 140px;
+	.banner {
+		background-size: cover;
+		height: 100%;
+		padding-bottom: 140px;
+	}
+	.banner::after {
+		height: 100%;
+	}
+	.banner__inner {
+		height: auto;
+	}
+	.banner__content {
+		margin-top: 37px;
+	}
+	.banner__tittle {
+		font-size: 36px;
+		line-height: 102.7%;
+	}
+	.banner__form {
+		width: 40%;
+		align-self: flex-start;
+		margin-top: 36px;
+	}
+	.banner__content {
+		width: 60%;
+	}
+	.form {
+		padding: 20px 18px;
+	}
+	.form__button {
+		margin-top: 22px;
+	}
+	.form__tittle {
+		font-size: 18px;
+		margin-bottom: 14px;
+	}
+    .list__container {
+        height: 420px;
     }
-    .banner::after{
-        height: 100%;
-    }
-    .banner__inner{
-        height: auto;
-    }
-    .banner__content{
-        margin-top: 37px;
-    }
-    .banner__tittle{
-        font-size: 36px;
-        line-height: 102.7%;
-    }
-    .banner__form{
-        width: 40%;
-        align-self: flex-start;
-        margin-top: 36px;
-    }
-    .banner__content{
-        width: 60%;
-    }
-    .form{
-        padding: 20px 18px;
-    }
-    .form__button{
-        margin-top: 22px;
-    }
-    .form__tittle{
-        font-size: 18px;
-        margin-bottom: 14px;
-    }
+}
+@media (max-height: 790px) {
+	.banner {
+		height: 150%;
+		padding: 30px 0 150px 0;
+	}
+	.banner__inner {
+		display: flex;
+		align-items: flex-start;
+		height: auto;
+	}
+	.banner::after {
+		height: 100%;
+	}
 }
 @media (max-width: 768px) {
-    .banner__content{
-        width: 50%;
-    }
-    .banner__form{
-        width: 50%;
-    }
-    .contract__link{
-        margin-left: 5px;
-        padding: 7.5px 15px;
-        font-size: 15px;
-    }
-    .button-hide{
-        display: flex;
-    }
+	.banner__content {
+		width: 50%;
+	}
+	.banner__form {
+		width: 50%;
+	}
+	.contract__link {
+		margin-left: 5px;
+		padding: 7.5px 15px;
+		font-size: 15px;
+	}
+	.button-hide {
+		display: flex;
+	}
 }
 
-@media (max-width: 579px) {
-    .banner__inner{
-        flex-direction: column-reverse;
+@media (max-width: 650px) {
+	.banner__inner {
+		flex-direction: column-reverse;
+	}
+	.banner {
+		padding-top: 0;
+	}
+	.banner__content {
+		width: 100%;
+	}
+	.banner__form {
+		max-width: 100%;
+		width: 100%;
+		margin-top: 18px;
+		margin-left: 0;
+		align-self: center;
+	}
+	.list__marker {
+		padding: 12px 12px 0 0;
+	}
+    .list__container {
+        height: auto;
     }
-    .banner__content{
-        width: 100%;
-    }
-    .banner__form{
-        width: 100%;
-        margin-top: 18px;
-        margin-left: 0;
-        align-self: center;
-    }
-    .list__marker{
-        padding: 12px 12px 0 0;
-    }
-   
 }
 
 /* active */
 
-.list--active{
-    display: block;
+.list--active {
+	display: block!important;
 }
-
