@@ -44,7 +44,7 @@
                   <a href="../pages/Nanny-Ventures-sub.html" class="header-button__text">Join Nanny Ventures</a>
                 </div>
                 <div class="header__contacts contacts">
-                  <p class="contacts__email">E-mail: info@nanny.ventures</p>
+                  <a href="mailto:info@nanny.ventures" class="contacts__email">E-mail: <span>info@nanny.ventures</span></a>
                   <div class="contatcts__social social">
                     <a class="social__link" href="#">
                       <svg class="social__icon">
@@ -66,7 +66,7 @@
 
       <!-- banner -->
 
-      <section class="banner">
+      <section class="banner" style="background-image: url('../img/banners/BG-7.jpg');">
         <div class="container">
           <div class="banner__inner">
             <div class="banner__content">
@@ -92,7 +92,7 @@
             <div class="banner__form form">
               <h3 class="form__tittle">Повідомити мені про початок</h3>
               <input type="text" class="form__input" placeholder="Iм’я">
-              <input type="number" class="form__input" placeholder="Номер">
+              <input class="form__input" name="phone-mobail" placeholder="Номер">
               <input type="email" class="form__input" placeholder=" E-mail">
               <button class="form__button button">Бути першим</button>
             </div>
@@ -140,7 +140,7 @@
             </nav>
             <div class="basement__contacts contacts">
               <h3 class="contacts__tittle">Контакти</h3>
-              <p class="contacts__email">E-mail: info@nanny.ventures</p>
+              <a href="mailto:info@nanny.ventures" class="contacts__email">E-mail: <span>info@nanny.ventures</span></a>
               <div class="contatcts__social social">
                 <a class="social__link" href="#">
                   <svg class="social__icon">
@@ -176,6 +176,8 @@
   <script src="../js/slick.min.js"></script>
   <!-- animate aos -->
   <script src="../js/aos.js"></script>
+   <!-- tel-input -->
+   <script src="../js/jquery.inputmask.min.js"></script>
   <!-- js -->
   <script src="../js/script.min.js"></script>
 </body>

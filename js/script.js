@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+  $("input[name='phone-mobail']").inputmask("+38 (999) 999-99-99");
+
   //--------------  nav-toggle  --------------
   let navToggleMenu = $(".header__nav"); 
 	let navToggle = $(".nav-toggle");
@@ -150,7 +153,7 @@ $(document).ready(function(){
           height: 'easyInOutCubic',
         },
       }
-    )
+    ).removeClass('body-scroll-off');
     event.preventDefault()
   });
 
@@ -164,6 +167,9 @@ $(document).ready(function(){
   $(".list__container .list__ansver--start-active").show();
   $(".list__container .list__question--start-active").addClass('list--active');
 
+  // -------------- input ------------
+
+  
   // ------------  slick lider  --------------
     $('.profitability-slider').slick({
         centerMode: false,
@@ -241,4 +247,6 @@ $(document).ready(function(){
     disable: false,
     once: true
   });
+
+
 });

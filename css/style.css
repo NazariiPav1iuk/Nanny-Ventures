@@ -132,6 +132,9 @@ body {
 		#2f49d9 45.15%,
 		#212071 104.58%
 	);
+	display: -webkit-box;  
+	display: -ms-flexbox;  
+	display: -webkit-flex;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -816,6 +819,10 @@ body {
 	color: var(--textDark);
 	margin-top: 5px;
 }
+.contacts__email:hover span{
+	color:var(--blue);
+	cursor: pointer;
+}
 .contatcts__social {
 	margin-top: 14px;
 }
@@ -1048,6 +1055,9 @@ body {
 	.header__contacts {
 		display: block;
 		margin-top: 50px;
+	}
+	.header-button{
+		width: 202px;	
 	}
 	/* banner */
 	.banner__tittle {
