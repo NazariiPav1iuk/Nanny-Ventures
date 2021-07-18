@@ -79,6 +79,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	margin-top: 90px;
 }
 .content {
 	flex: 1 0 auto;
@@ -94,6 +95,10 @@ body {
 	background-color: var(--white);
 	width: 100%;
 	padding: 20px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
 }
 .header__inner {
 	display: flex;
@@ -922,6 +927,9 @@ body {
 	}
 }
 @media (max-width: 768px) {
+	.page-wrapper{
+		margin-top: 70px;
+	}
 	.header__nav {
 		display: none;
 	}
