@@ -31,76 +31,34 @@ $(document).ready(function(){
 
   //-------------- calc  --------------
 
-  let prfInput = $('#profitability__input');
-  let cryptoPercent = $('#data-crypto').attr('data-crypto');
-  let teslaPercent = $('#data-tesla').attr('data-tesla');
-  let goldPercent = $('#data-gold').attr('data-gold');
-  let spPercent = $('#data-sp').attr('data-sp');
-  let inputStandart = '1000'
-
-  // on strart doc load
-        let cryptoRes =  Math.trunc(parseInt(inputStandart) + (inputStandart * (cryptoPercent / 100)));
-        let teslaRes =   Math.trunc(parseInt(inputStandart) + (inputStandart * (teslaPercent / 100)));
-        let goldRes =   Math.trunc(parseInt(inputStandart) + (inputStandart * (goldPercent / 100)));
-        let spRes =   Math.trunc(parseInt(inputStandart) + (inputStandart * (spPercent / 100)));
-
-        $('#crypto-res').empty().append(`$${numberWithCommas(cryptoRes)}`);
-        $('#tesla-res').empty().append(`$${numberWithCommas(teslaRes)}`);
-        $('#gold-res').empty().append(`$${numberWithCommas(goldRes)}`);
-        $('#sp-res').empty().append(`$${numberWithCommas(spRes)}`);
-
   // only numbers
-  $(prfInput).keypress(function (e) {
+  $('#profitability__input').keypress(function (e) {
     var txt = String.fromCharCode(e.which);
     if (!txt.match(/[A-Za-z0-9&. ]/)) {
         return false;
     }
   });
   // keyup
-  prfInput.keyup(function () { 
-    
-      let inputValue =  prfInput.val();
-
-      if(inputValue == ''){
-        $('#crypto-res').empty().append(`$${numberWithCommas(cryptoRes)}`);
-        $('#tesla-res').empty().append(`$${numberWithCommas(teslaRes)}`);
-        $('#gold-res').empty().append(`$${numberWithCommas(goldRes)}`);
-        $('#sp-res').empty().append(`$${numberWithCommas(spRes)}`);
-        return;
-      } else if(inputValue >= 0){
-       
-        let cryptoRes =  Math.trunc(parseInt(inputValue) + (inputValue * (cryptoPercent / 100)));
-        let teslaRes =   Math.trunc(parseInt(inputValue) + (inputValue * (teslaPercent / 100)));
-        let goldRes =   Math.trunc(parseInt(inputValue) + (inputValue * (goldPercent / 100)));
-        let spRes =   Math.trunc(parseInt(inputValue) + (inputValue * (spPercent / 100)));
-
-        $('#crypto-res').empty().append(`$${numberWithCommas(cryptoRes)}`);
-        $('#tesla-res').empty().append(`$${numberWithCommas(teslaRes)}`);
-        $('#gold-res').empty().append(`$${numberWithCommas(goldRes)}`);
-        $('#sp-res').empty().append(`$${numberWithCommas(spRes)}`);
-
-        if(cryptoRes > 999999){
-          $('#crypto-res').css({'font-size':'26px', 'margin-top':'10px'});
-        } else {
-          $('#crypto-res').css({'font-size':'36px', 'margin-top':'0'});
-        } 
-        if(teslaRes > 999999){
-          $('#tesla-res').css({'font-size':'26px','margin-top':'10px'});
-        } else{
-          $('#tesla-res').css({'font-size':'36px', 'margin-top':'0'});
-        }
-        if(goldRes > 999999){
-          $('#gold-res').css({'font-size':'26px','margin-top':'10px'});
-        } else{
-          $('#gold-res').css({'font-size':'36px', 'margin-top':'0'});
-        }
-        if(spRes > 999999){
-          $('#sp-res').css({'font-size':'26px','margin-top':'10px'});
-        } else{
-          $('#sp-res').css({'font-size':'36px', 'margin-top':'0'});
-        }
-      }
+  $('#profitability__input').keyup(function () { 
+      let inputValue =  $(this).val();
+      inputValue = inputValue <= 0 || inputValue == '' ?  1000 : inputValue;
+      calculate(inputValue);
   });
+
+  function calculate(inputValue) {
+    $('.js-acia-item').each(function(index){
+      let acia = $(this);
+      let proc = acia.data('proc');
+      let resultHtmlDutElement = acia.find('.js-res');
+
+      let res =  Math.trunc(parseInt(inputValue) + (inputValue * (proc / 100)));
+      resultHtmlDutElement.html(`${numberWithCommas(res)}`);
+
+      if(res > 999999){
+          resultHtmlDutElement.css({'font-size':'26px', 'margin-top':'10px'});
+      }
+    });
+  }
 
   // numbers with comas
   function numberWithCommas(x) {
@@ -248,5 +206,5 @@ $(document).ready(function(){
     once: true
   });
 
-
+  calculate(1000);
 });
