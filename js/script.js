@@ -6,12 +6,15 @@ $(document).ready(function(){
   let navToggleMenu = $(".header__nav"); 
 	let navToggle = $(".nav-toggle");
   let logo = $('.logo');
+  let navItems = $('.nav__item');
 
   navToggle.click(function() {
     if($(window).width() <= '580'){
       navToggleMenu.slideToggle(200).toggleClass('header__nav--active');
+      navToggleMenu.css({'display': 'flex'});
       navToggle.toggleClass('nav-toggle--active');
       $('body').toggleClass('body-scroll-off');
+    
     } else {
       navToggle.toggleClass('nav-toggle--active');
       navToggleMenu.toggleClass('header__nav--active');
@@ -24,10 +27,22 @@ $(document).ready(function(){
          ! navToggleMenu.is(e.target) && navToggleMenu.has(e.target).length === 0 &&
          ! logo.is(e.target) && logo.has(e.target).length === 0 
 		    ) {
-        $('.nav-toggle').removeClass('nav-toggle--active');
-        $('.header__nav').removeClass('header__nav--active');
+       hideToggleMenu();
 		}
 	});
+
+  navItems.click(function(){
+    if($(window).width() <= '768'){
+      hideToggleMenu();
+    }
+  });
+
+  function hideToggleMenu(){
+    $('.nav-toggle').removeClass('nav-toggle--active');
+    $('.header__nav').removeClass('header__nav--active');
+    $('body').removeClass('body-scroll-off');
+    navToggleMenu.css({'display': 'none'});
+  }
 
   //-------------- calc  --------------
 
@@ -44,6 +59,7 @@ $(document).ready(function(){
       inputValue = inputValue <= 0 || inputValue == '' ?  1000 : inputValue;
       calculate(inputValue);
   });
+
 
   function calculate(inputValue) {
     $('.js-acia-item').each(function(index){
